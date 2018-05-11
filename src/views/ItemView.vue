@@ -58,25 +58,24 @@ export default {
 
   // Fetch comments when mounted on the client
   beforeMount() {
-    this.fetchComments();
+    // this.fetchComments();
   },
 
   // refetch comments if item changed
   watch: {
-    item: "fetchComments"
+    // item: "fetchComments"
   },
 
   methods: {
-    fetchComments() {
-      if (!this.item || !this.item.kids) {
-        return;
-      }
-
-      this.loading = true;
-      fetchComments(this.$store, this.item).then(() => {
-        this.loading = false;
-      });
-    }
+    // fetchComments() {
+    //   if (!this.item || !this.item.kids) {
+    //     return;
+    //   }
+    //   this.loading = true;
+    //   fetchComments(this.$store, this.item).then(() => {
+    //     this.loading = false;
+    //   });
+    // }
   }
 };
 

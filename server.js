@@ -106,7 +106,7 @@ function render(req, res) {
     url: req.url
   }
   renderer.renderToString(context, (err, html) => {
-    console.log(err);
+    // console.log(err);
     if (err) {
       return handleError(err)
     }

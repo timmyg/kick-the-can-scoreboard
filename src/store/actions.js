@@ -1,7 +1,5 @@
 import {
-  fetchUser,
-  fetchItems,
-  fetchIdsByType
+  fetchAllScore
 } from '../api'
 
 export default {
@@ -13,14 +11,14 @@ export default {
   }, {
     type
   }) => {
-    commit('SET_ACTIVE_TYPE', {
-      type
-    })
-    return fetchIdsByType(type)
-      .then(ids => commit('SET_LIST', {
-        type,
-        ids
-      }))
+    // commit('SET_ACTIVE_TYPE', {
+    //   type
+    // })
+    // return fetchIdsByType(type)
+    //   .then(ids => commit('SET_LIST', {
+    //     type,
+    //     ids
+    //   }))
     // .then(() => dispatch('ENSURE_ACTIVE_ITEMS'))
   },
 

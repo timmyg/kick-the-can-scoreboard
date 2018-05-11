@@ -1,11 +1,11 @@
 import Vue from 'vue'
 
 export default {
-  SET_ACTIVE_TYPE: (state, {
-    type
-  }) => {
-    state.activeType = type
-  },
+  // SET_ACTIVE_TYPE: (state, {
+  //   type
+  // }) => {
+  //   state.activeType = type
+  // },
 
   // SET_LIST: (state, {
   //   type,
@@ -24,10 +24,10 @@ export default {
     })
   },
 
-  SET_USER: (state, {
-    id,
-    user
-  }) => {
-    Vue.set(state.users, id, user || false) /* false means user not found */
-  }
+  // SET_USER: (state, {
+  //   id,
+  //   user
+  // }) => {
+  //   Vue.set(state.users, id, user || false) /* false means user not found */
+  // }
 }
