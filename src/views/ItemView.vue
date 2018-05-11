@@ -1,7 +1,7 @@
 <template>
-  <div class="item-view" v-if="item">
+  <div class="item-view" v-if="item2">
     <template v-if="item">
-      <!-- <div class="item-view-header">
+      <div class="item-view-header">
         <a :href="item.url" target="_blank">
           <h1>{{ item.title }}</h1>
         </a>
@@ -22,7 +22,7 @@
         <ul v-if="!loading" class="comment-children">
           <comment v-for="id in item.kids" :key="id" :id="id"></comment>
         </ul>
-      </div> -->
+      </div>
     </template>
   </div>
 </template>
