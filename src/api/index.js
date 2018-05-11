@@ -66,7 +66,8 @@ export function fetchUser(id) {
 export function watchList(type, cb) {
   let first = true
   console.log("apiapi2", api);
-  const ref = api.get(`${type}stories`)
+  // const ref = api.get(`${type}stories`)
+  const ref = api.get(``)
   const handler = snapshot => {
     if (first) {
       first = false

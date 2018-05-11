@@ -1,5 +1,6 @@
 <template>
   <li class="news-item">
+    <b>hey</b>
     <span class="start">{{ item.start }}</span>
     <!-- <span class="score">{{ item.score }}</span>
     <span class="title">

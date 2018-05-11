@@ -7,12 +7,12 @@ export default {
     state.activeType = type
   },
 
-  SET_LIST: (state, {
-    type,
-    ids
-  }) => {
-    state.lists[type] = ids
-  },
+  // SET_LIST: (state, {
+  //   type,
+  //   ids
+  // }) => {
+  //   state.lists[type] = ids
+  // },
 
   SET_ITEMS: (state, {
     items

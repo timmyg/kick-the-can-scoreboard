@@ -26,7 +26,7 @@ export default {
   // this Array may not be fully fetched.
   activeItems(state, getters) {
     // return getters.activeIds.map(id => state.items[id]).filter(_ => _)
-    // return state.lists.top.data;
+    return state.items;
     // const {
     //   activeType,
     //   itemsPerPage,
@@ -36,7 +36,7 @@ export default {
     //   e.id = e._id;
     // });
     // console.log(state.lists.top.data);
-    return state.lists.top.data.filter(_ => _)
+    // return state.lists.top.data.filter(_ => _)
     // return []
   }
 }
