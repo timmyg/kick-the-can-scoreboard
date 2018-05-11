@@ -1,7 +1,12 @@
 <template>
   <li class="news-item">
-    <b>hey</b>
-    <span class="start">{{ item.start }}</span>
+    <!-- <span class="start">{{ item.start }}</span> -->
+    <em v-if="item.scoreboard.is_active">{{item.scoreboard.inning_division}} {{item.scoreboard.inning}}</em>
+              <b v-if="!item.scoreboard.name === 'Final'">Final</b>
+              <!-- <span>{{ item.start | moment("M/DD/YY hh:mma z") }}</span> -->
+              <span>{{ item.start | moment("YYYY") }}</span>
+              <p>{{ item.teams.away.location }} {{ item.teams.away.name }} <b>{{ item.teams.away.score }}</b></p>
+              <p>{{ item.teams.home.location }} {{ item.teams.home.name }} <b>{{ item.teams.home.score }}</b></p>
     <!-- <span class="score">{{ item.score }}</span>
     <span class="title">
       <template v-if="item.url">
