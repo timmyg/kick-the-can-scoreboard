@@ -79,6 +79,7 @@ export default {
 
   methods: {
     loadItems(to = this.page, from = -1) {
+      console.log("loadItems");
       this.$bar.start();
       this.$store
         .dispatch("FETCH_LIST_DATA", {

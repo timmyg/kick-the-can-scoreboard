@@ -17,7 +17,8 @@ export default {
   SET_ITEMS: (state, {
     items
   }) => {
-    items.forEach(item => {
+    console.log("items", items.data.length);
+    items.data.forEach(item => {
       if (item) {
         Vue.set(state.items, item.id, item)
       }
