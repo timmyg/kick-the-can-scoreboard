@@ -5,9 +5,10 @@ import VueMoment from 'vue-moment';
 Vue.use(VueMoment);
 Vue.use(Router)
 
+// console.log(Vue.moment().format());
 // route-level code splitting
-const createListView = id => () =>
-  import ('../views/CreateListView').then(m => m.default(id))
+const createListView = (sport, date) => () =>
+  import ('../views/CreateListView').then(m => m.default(date))
 const ItemView = () =>
   import ('../views/ItemView.vue')
 const UserView = () =>
@@ -29,8 +30,8 @@ export function createRouter() {
       // { path: '/item/:id(\\d+)', component: ItemView },
       // { path: '/user/:id', component: UserView },
       {
-        path: '/',
-        component: createListView('top')
+        path: '/:sport/:date',
+        component: createListView()
       }
     ]
   })

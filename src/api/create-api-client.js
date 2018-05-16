@@ -10,6 +10,6 @@ export function createAPI({
   // Firebase.initializeApp(config)
   // return Firebase.database().ref(version)
   return axios.create({
-    baseURL: `https://kick-the-can-api.herokuapp.com/api/scoreboard?date=2018-05-10&sport=mlb`
+    baseURL: `https://kick-the-can-api.herokuapp.com/api/scoreboard`
   })
 }

@@ -7,7 +7,7 @@ export function createAPI({
   version
 }) {
   return axios.create({
-    baseURL: `https://kick-the-can-api.herokuapp.com/api/scoreboard?date=2018-05-10&sport=mlb`
+    baseURL: `https://kick-the-can-api.herokuapp.com/api/scoreboard`
   })
   // let api
   // // this piece of code may run multiple times in development mode,

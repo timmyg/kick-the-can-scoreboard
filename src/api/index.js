@@ -23,7 +23,7 @@ const api = createAPI({
 //   setTimeout(warmCache, 1000 * 60 * 15)
 // }
 
-function fetch(child) {
+function fetch(date) {
   logRequests && console.log(`fetching ${child}...`)
   // const cache = api.cachedItems
   // if (cache && cache.has(child)) {
@@ -32,7 +32,7 @@ function fetch(child) {
   // } else {
   // return new Promise((resolve, reject) => {
   console.log("apiapi", api);
-  return api.get();
+  return api.get("?sport=mlb&date=" + date);
   // api.get(child).once('value', snapshot => {
   //   const val = snapshot.val()
   //   // mark the timestamp when this item is cached
@@ -55,10 +55,10 @@ function fetch(child) {
 //   return fetch(`item/${id}`)
 // }
 
-export function fetchItems() {
+export function fetchItems(date) {
   // return Promise.all(ids.map(id => fetchItem(id)))
   // return Promise.all(ids.map(id => fetchItem(id)))
-  return fetch();
+  return fetch(date);
 }
 
 // export function fetchUser(id) {

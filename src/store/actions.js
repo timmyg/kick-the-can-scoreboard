@@ -9,15 +9,15 @@ export default {
     dispatch,
     state
   }, {
-    type
+    date
   }) => {
     // commit('SET_ACTIVE_TYPE', {
     //   type
     // })
-    console.log("FETCH_LIST_DATA");
-    return fetchItems()
+    console.log("FETCH_LIST_DATA", date);
+    return fetchItems(date)
       .then(items => {
-        console.log("iiiii", items);
+        // console.log("iiiii", items);
         commit('SET_ITEMS', {
           items
         })

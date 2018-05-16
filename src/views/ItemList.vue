@@ -1,11 +1,11 @@
 <template>
   <div class="news-view">
     <div class="news-list-nav">
-      <router-link v-if="page > 1" :to="'/' + type + '/' + (page - 1)">&lt; prev</router-link>
-      <a v-else class="disabled">&lt; prev</a>
-      <span>{{ page }}/{{ maxPage }}</span>
-      <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link>
-      <a v-else class="disabled">more &gt;</a>
+      <!-- <router-link v-if="page > 1" :to="'/' + type + '/' + (page - 1)">&lt; prev</router-link> -->
+      <!-- <a v-else class="disabled">&lt; prev</a> -->
+      <span>{{ this.$route.params.date }}</span>
+      <!-- <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link> -->
+      <!-- <a v-else class="disabled">more &gt;</a> -->
     </div>
     <transition :name="transition">
       <div class="news-list" :key="displayedPage" v-if="displayedPage > 0">
@@ -42,16 +42,16 @@ export default {
   },
 
   computed: {
-    page() {
-      return Number(this.$route.params.page) || 1;
-    },
-    maxPage() {
-      // const { itemsPerPage, lists } = this.$store.state;
-      // return Math.ceil(lists[this.type].length / itemsPerPage);
-    },
-    hasMore() {
-      // return this.page < this.maxPage;
-    }
+    // page() {
+    //   return Number(this.$route.params.page) || 1;
+    // },
+    // maxPage() {
+    //   // const { itemsPerPage, lists } = this.$store.state;
+    //   // return Math.ceil(lists[this.type].length / itemsPerPage);
+    // },
+    // hasMore() {
+    //   // return this.page < this.maxPage;
+    // }
   },
 
   beforeMount() {

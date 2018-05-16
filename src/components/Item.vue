@@ -1,12 +1,16 @@
 <template>
   <li class="news-item">
     <!-- <span class="start">{{ item.start }}</span> -->
-    <em v-if="item.scoreboard.is_active">{{item.scoreboard.inning_division}} {{item.scoreboard.inning}}</em>
-              <b v-if="!item.scoreboard.name === 'Final'">Final</b>
-              <!-- <span>{{ item.start | moment("M/DD/YY hh:mma z") }}</span> -->
-              <span>{{ item.start | moment("M/DD/YYYY h:mma z") }}</span>
-              <p>{{ item.teams.away.location }} {{ item.teams.away.name }} <b>{{ item.teams.away.score }}</b></p>
-              <p>{{ item.teams.home.location }} {{ item.teams.home.name }} <b>{{ item.teams.home.score }}</b></p>
+    <template v-if="item.scoreboard">
+      <span v-if="!item.scoreboard.is_active && !item.scoreboard.name === 'Final'">{{ item.start | moment("M/DD/YYYY h:mm z") }}</span>
+      <span v-if="item.scoreboard.is_active">{{item.scoreboard.inning_division}}&nbsp;{{item.scoreboard.inning}}</span>
+      <b v-else-if="item.scoreboard.name === 'Final'">Final</b>
+      <b v-else-if="item.scoreboard.name === 'Delayed'">Delayed</b>
+      <b v-else-if="item.scoreboard.name === 'Postponed'">Postponed</b>
+      <b v-else>Pregame</b>
+    </template>
+    <p>{{ item.teams.away.location }} {{ item.teams.away.name }} <b>{{ item.teams.away.score }}</b></p>
+    <p>{{ item.teams.home.location }} {{ item.teams.home.name }} <b>{{ item.teams.home.score }}</b></p>
     <!-- <span class="score">{{ item.score }}</span>
     <span class="title">
       <template v-if="item.url">
