@@ -1,18 +1,18 @@
 import Vue from 'vue'
 
 export default {
-  // SET_ACTIVE_TYPE: (state, {
-  //   type
-  // }) => {
-  //   state.activeType = type
-  // },
 
-  // SET_LIST: (state, {
-  //   type,
-  //   ids
-  // }) => {
-  //   state.lists[type] = ids
-  // },
+  SET_SPORT: (state, {
+    sport
+  }) => {
+    state.sport = sport
+  },
+
+  SET_DATE: (state, {
+    date
+  }) => {
+    state.date = date
+  },
 
   SET_ITEMS: (state, {
     items
@@ -24,11 +24,4 @@ export default {
       }
     })
   },
-
-  // SET_USER: (state, {
-  //   id,
-  //   user
-  // }) => {
-  //   Vue.set(state.users, id, user || false) /* false means user not found */
-  // }
 }

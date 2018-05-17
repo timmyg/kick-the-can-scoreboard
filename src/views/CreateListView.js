@@ -16,9 +16,12 @@ export default function createListView(sport, date) {
     asyncData({
       store
     }) {
-      console.log("async Data");
+      const {
+        params
+      } = store.state.route
       return store.dispatch('FETCH_LIST_DATA', {
-        date
+        date: params.date,
+        sport: params.sport
       })
     },
 
