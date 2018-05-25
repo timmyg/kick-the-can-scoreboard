@@ -3,7 +3,7 @@
     <div class="news-list-nav">
       <!-- <router-link v-if="page > 1" :to="'/' + type + '/' + (page - 1)">&lt; prev</router-link> -->
       <!-- <a v-else class="disabled">&lt; prev</a> -->
-      <span>{{ this.$route.params.date }}</span>
+      <span>{{ this.$route.params.date | moment("dddd Do") }}</span>
       <!-- <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link> -->
       <!-- <a v-else class="disabled">more &gt;</a> -->
     </div>
