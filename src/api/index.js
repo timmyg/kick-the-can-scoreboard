@@ -12,9 +12,9 @@ const api = createAPI({
   }
 })
 
-function fetch(date) {
+function fetch(date, sport) {
   logRequests && console.log(`fetching ${child}...`)
-  return api.get("?sport=mlb&date=" + date);
+  return api.get("?sport=" + sport + "&date=" + date);
 }
 
 export function fetchItems(date, sport) {
