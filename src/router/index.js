@@ -6,8 +6,8 @@ Vue.use(VueMoment);
 Vue.use(Router)
 
 // route-level code splitting
-const createListView = (sport, date) => () =>
-  import ('../views/CreateListView').then(m => m.default(date))
+const createListView = () => () =>
+  import ('../views/CreateListView').then(m => m.default())
 const ItemView = () =>
   import ('../views/ItemView.vue')
 
