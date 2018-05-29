@@ -26,29 +26,6 @@
       <p v-bind:class="{ winner: isAwayWinner }">{{ item.teams.away.location }} {{ item.teams.away.name }} {{ item.teams.away.score }}</p>
       <p v-bind:class="{ winner: isHomeWinner }">{{ item.teams.home.location }} {{ item.teams.home.name }} {{ item.teams.home.score }}</p>
     </div>
-    <!-- <span class="score">{{ item.score }}</span>
-    <span class="title">
-      <template v-if="item.url">
-        <a :href="item.url" target="_blank" rel="noopener">{{ item.title }}</a>
-        <span class="host"> ({{ item.url | host }})</span>
-      </template>
-      <template v-else>
-        <router-link :to="'/item/' + item.id">{{ item.title }}</router-link>
-      </template>
-    </span>
-    <br>
-    <span class="meta">
-      <span v-if="item.type !== 'job'" class="by">
-        by <router-link :to="'/user/' + item.by">{{ item.by }}</router-link>
-      </span>
-      <span class="time">
-        {{ item.time | timeAgo }} ago
-      </span>
-      <span v-if="item.type !== 'job'" class="comments-link">
-        | <router-link :to="'/item/' + item.id">{{ item.descendants }} comments</router-link>
-      </span>
-    </span>
-    <span class="label" v-if="item.type !== 'story'">{{ item.type }}</span> -->
   </li>
 </template>
 
@@ -61,12 +38,14 @@ export default {
   computed: {
     // a computed getter
     isAwayWinner: function() {
+      // console.log(this.item.teams.away.winner);
       return this.item.teams.away.winner;
     },
     isHomeWinner: function() {
+      // console.log(this.item.teams.home.winner);
       return this.item.teams.home.winner;
     }
-  },
+  }
   // methods: {
   //   isAwayWinner: function() {
   //     return this.item.teams.away.winner;
@@ -76,9 +55,9 @@ export default {
   //   }
   // },
   // http://ssr.vuejs.org/en/caching.html#component-level-caching
-  serverCacheKey: ({ item: { id, __lastUpdated, time } }) => {
-    return `${id}::${__lastUpdated}::${timeAgo(time)}`;
-  }
+  // serverCacheKey: ({ item: { id, __lastUpdated, time } }) => {
+  //   return `${id}::${__lastUpdated}::${timeAgo(time)}`;
+  // }
 };
 </script>
 
