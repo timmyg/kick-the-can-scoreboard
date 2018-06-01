@@ -24,6 +24,7 @@ export function createRouter() {
         return "/mlb/" + moment().format("YYYY-MM-DD")
       }
     }, {
+      name: 'sport-daily',
       path: '/:sport/:date',
       component: createListView()
     }]
